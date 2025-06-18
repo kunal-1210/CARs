@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "241684042427",
+    "firebase_url": "https://reg-log-94747-default-rtdb.firebaseio.com",
+    "project_id": "reg-log-94747",
+    "storage_bucket": "reg-log-94747.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241684042427:android:bac6138be1f945dd948f9e",
+        "android_client_info": {
+          "package_name": "com.example.cars"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeseABoD_Q0dz2HqZyMQYfN5uaNwtL-dU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241684042427:android:ef7b321e2bdba6d0948f9e",
+        "android_client_info": {
+          "package_name": "com.example.rentit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeseABoD_Q0dz2HqZyMQYfN5uaNwtL-dU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_upload">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Car Brand -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car Brand:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"/>
+            <EditText
+                android:id="@+id/car_brand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter the car brand"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <!-- Car Model -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car Model:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"/>
+            <EditText
+                android:id="@+id/car_model"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter the car model"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <!-- Per Day Rate -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Per Day Rate:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"/>
+
+            <EditText
+                android:id="@+id/per_day_rate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter per day rate"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <!-- Seats -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seats:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"/>
+            <EditText
+                android:id="@+id/seats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter number of seats"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <!-- Fuel Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuel Type:"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group_fuel_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <RadioButton
+                android:id="@+id/radio_petrol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Petrol"/>
+            <RadioButton
+                android:id="@+id/radio_diesel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diesel"/>
+            <RadioButton
+                android:id="@+id/radio_cng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CNG"/>
+            <RadioButton
+                android:id="@+id/radio_electric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Electric"/>
+        </RadioGroup>
+
+        <!-- Vehicle Number Plate -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle No. Plate:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"/>
+            <EditText
+                android:id="@+id/vehicle_number_plate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter vehicle number plate"
+                android:inputType="text"/>
+        </LinearLayout>
+ 
+        <Button
+            android:id="@+id/verify_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify Car"/>
+
+        <!-- Transmission Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transmission Type:"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/transmission_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <RadioButton
+                android:id="@+id/manual_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manual"/>
+            <RadioButton
+                android:id="@+id/automatic_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Automatic"/>
+        </RadioGroup>
+
+        <!-- Mileage -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mileage:"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"/>
+            <EditText
+                android:id="@+id/mileage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter mileage"
+                android:inputType="number"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km"
+                android:paddingStart="8dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Upload Image -->
+        <Button
+            android:id="@+id/upload_image_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Image"
+            android:layout_marginBottom="12dp"/>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:id="@+id/image_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="8dp" />
+        </HorizontalScrollView>
+
+        <!-- Pick Location -->
+        <Button
+            android:id="@+id/pick_location_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick Location on Map"
+            android:layout_marginBottom="12dp"/>
+        <fragment
+            android:id="@+id/map_preview"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+        <!-- Add Car -->
+        <Button
+            android:id="@+id/add_car_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Car"/>
+
+    </LinearLayout>
+</ScrollView>

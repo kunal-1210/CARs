@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CARs</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">click to login</string>
+    <string name="click_to_register">click to register</string>
+    <string name="title_activity_host_car">HostCarActivity</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps2">MapsActivity2</string>
+
+</resources>

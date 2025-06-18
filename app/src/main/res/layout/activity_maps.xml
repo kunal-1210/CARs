@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+    <!-- Search bar on top -->
+    <SearchView
+        android:id="@+id/search_location1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search location"
+        android:layout_alignParentTop="true" />
+
+    <!-- Button below the search bar -->
+    <Button
+        android:id="@+id/btn_finalize_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Location"
+        android:layout_below="@id/search_location1"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp" />
+
+    <!-- Map fragment fills the rest -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_finalize_location" />
+
+</RelativeLayout>

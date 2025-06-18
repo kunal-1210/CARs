@@ -174,7 +174,7 @@ public class activity_upload extends AppCompatActivity implements OnMapReadyCall
             } catch (Exception e) {
                 Log.e("CloudinaryUpload", "Upload failed: ", e);
                 runOnUiThread(() -> {
-                    Toast.makeText(this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Upload - failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     listener.onComplete(null);
                 });
             }
@@ -191,13 +191,13 @@ public class activity_upload extends AppCompatActivity implements OnMapReadyCall
                 int count = data.getClipData().getItemCount();
                 for (int i = 0; i < count; i++) {
                     Uri uri = data.getClipData().getItemAt(i).getUri();
-                    final int takeFlags = data.getFlags() & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                    final int takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                     getContentResolver().takePersistableUriPermission(uri, takeFlags);
                     imageUriList.add(uri);
                 }
             } else if (data.getData() != null) {
                 Uri uri = data.getData();
-                final int takeFlags = data.getFlags() & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                final int takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 getContentResolver().takePersistableUriPermission(uri, takeFlags);
                 imageUriList.add(uri);
             }

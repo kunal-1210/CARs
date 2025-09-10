@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Main Section -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notifications"
+            android:title="Notifications"
+            android:icon="@drawable/baseline_circle_notifications_24" />
+
+        <item
+            android:id="@+id/nav_rent_car"
+            android:title="Rent a Car"
+            android:icon="@drawable/car_rent" />
+
+        <item
+            android:id="@+id/nav_list_car"
+            android:title="Become a Host"
+            android:icon="@drawable/car_list" />
+
+        <item
+            android:id="@+id/nav_Mybookings"
+            android:title="My Bookings"
+            android:icon="@drawable/baseline_directions_car_24" />
+    </group>
+
+
+    <!-- Account Section -->
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_setting"
+            android:title="Settings"
+            android:icon="@drawable/setting" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout"
+            android:icon="@drawable/log_out" />
+    </group>
+
+</menu>

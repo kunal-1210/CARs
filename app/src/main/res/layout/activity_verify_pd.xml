@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titlePickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current status of car"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+            <LinearLayout
+                android:id="@+id/progressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <!-- STEP 1: Booking Confirmed -->
+                <TextView
+                    android:id="@+id/stepBookingConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/step_circle_active"
+                    android:text="Booked"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:padding="4dp" />
+
+                <!-- Arrow -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_arrow_forward_24"
+                    android:layout_marginHorizontal="6dp"
+                    app:tint="#4CAF50" />
+
+                <!-- STEP 2: Awaiting Pickup -->
+                <TextView
+                    android:id="@+id/stepAwaitingPickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/step_circle_inactive"
+                    android:text="Pickup"
+                    android:textSize="9sp"
+                    android:textColor="#4CAF50"
+                    android:padding="4dp" />
+
+                <!-- Arrow -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_arrow_forward_24"
+                    android:layout_marginHorizontal="6dp"
+                    app:tint="#4CAF50" />
+
+                <!-- STEP 3: Trip in Progress -->
+                <TextView
+                    android:id="@+id/stepTripInProgress"
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:background="@drawable/step_square_inactive"
+                    android:text="In Trip"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:padding="4dp" />
+
+                <!-- Arrow -->
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_arrow_forward_24"
+                    android:layout_marginHorizontal="6dp"
+                    app:tint="#4CAF50" />
+
+                <!-- STEP 4: Car Returned -->
+                <TextView
+                    android:id="@+id/stepCarReturned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/step_circle_inactive"
+                    android:text="Returned"
+                    android:textSize="9sp"
+                    android:textColor="#4CAF50"
+                    android:padding="4dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <!-- Car Info -->
+        <ImageView
+            android:id="@+id/ivCarImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/image_border" />
+
+        <TextView
+            android:id="@+id/tvCarName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Honda City 2024"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp" />
+        <TextView
+            android:id="@+id/tvCarno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Honda City 2024"
+            android:textSize="20sp"
+
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/tvseat"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="seats"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"></Space>
+        <TextView
+            android:id="@+id/tvfuel"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="petrol"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+             />
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"></Space>
+        <TextView
+            android:id="@+id/tvtrans"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="manual"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="8dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                android:id="@+id/contact0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1111111"
+                android:textColor="@color/quantum_googredA700"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textIsSelectable="true"
+                />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <TextView
+            android:id="@+id/tvPickuptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pickup Time:"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvPickuptimeval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="...."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <TextView
+            android:id="@+id/tvPickupAddressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pickup Address:"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvPickupAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123 Main Street, City"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp"/>
+        <!-- Map Fragment -->
+
+
+        <!-- Verification Code -->
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="12dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Enter the 4-digit code provided by the host:"
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/etPickupCode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Code"
+            android:maxLength="6"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:importantForAutofill="no"
+            android:padding="12dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Confirm Pickup Button -->
+        <Button
+            android:id="@+id/btnConfirmPickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car has been picked"
+            android:textAllCaps="false"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:padding="12dp" />
+
+        <!-- ProgressBar (hidden initially) -->
+        <ProgressBar
+            android:id="@+id/progressPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <!-- Bubble background with price -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/marker_background"
+        android:padding="6dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/marker_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹500"
+            android:textColor="#FAFAFA"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Triangle pointer -->
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:src="@drawable/triangle_pointer"
+        android:layout_gravity="center" />
+</LinearLayout>

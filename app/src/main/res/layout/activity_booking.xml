@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:dividerPadding="8dp">
+
+        <!-- Car Image -->
+
+        <!-- Car Details -->
+        <ImageView
+            android:id="@+id/carImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="Car Image"
+            android:scaleType="centerCrop"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/carBrandModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toyota Corolla"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+                <TextView
+                    android:id="@+id/fuel_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fule ,"
+                    android:textSize="14sp"
+                    android:textColor="#555" />
+        <TextView
+            android:id="@+id/seats_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 5 seats ,"
+            android:textSize="14sp"
+            android:textColor="#555" />
+        <TextView
+            android:id="@+id/transmission_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="automatic"
+            android:textSize="14sp"
+            android:textColor="#555" />
+
+    </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Date Selection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start Date"
+                        android:textColor="#777" />
+
+                    <TextView
+                        android:id="@+id/startDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Date"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date"
+                        android:textColor="#777" />
+
+                    <TextView
+                        android:id="@+id/endDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Date"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Total Days -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:id="@+id/totalDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Days: "
+                android:padding="12dp"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="4dp"
+
+                android:padding="12dp">
+        <!-- Map -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pick pickup and drop location:"
+                android:textAlignment="gravity"
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+            />
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <fragment
+                        android:id="@+id/mapFragment"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+                    <View
+                        android:id="@+id/mapOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Pickup & Drop Address -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <EditText
+                android:id="@+id/addressDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Text Address of Pickup &amp; Drop Address "
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.card.MaterialCardView>
+        <!-- Pickup Date and Time Selection -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Pickup Date -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pickup Date"
+                    android:textColor="#777"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/pickupDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Pickup Date"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <!-- Pickup Time -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Pickup Time"
+                    android:textColor="#777"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/pickupTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Pickup Time"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- Price Breakdown -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/Eprice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="RENT"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/units1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#00897B"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/units2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="x"
+                        android:textAlignment="center"
+                        android:textColor="#00897B"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/units3"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewStart"
+                        android:textColor="#00897B"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/ttl"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+
+                        android:textAlignment="viewEnd"
+                        android:textStyle="bold"
+                        android:textColor="#00897B"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/Eprice0"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="DEPOSIT"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/units0"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text=" 3000"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#00897B"
+                        android:textSize="16sp" />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+
+                        android:textAlignment="viewStart"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/ttl0"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:textStyle="bold"
+                        android:text=" ₹3000"
+                        android:textColor="#00897B"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#66000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+                <TextView
+                    android:id="@+id/grandTotalv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Grand Total:"
+                    android:textStyle="bold"
+                    android:textColor="#E91E63"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4dp" />
+                <TextView
+                    android:id="@+id/grandTotalValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:textStyle="bold"
+                    android:textColor="#E91E63"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- User Details -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Terms & Conditions heading -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terms &amp; Conditions"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Terms text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• ₹3000 deposit required\n• ₹7/km after 300km\n• Aadhar, Licence, PAN copies required\n• Car must be returned with full fuel\n• Cleaning charges may apply if car is dirty"
+                    android:textSize="14sp"
+                    android:textColor="#555"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Checkbox -->
+                <CheckBox
+                    android:id="@+id/checkbox_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I agree to the Terms &amp; Conditions"
+                    android:textSize="14sp"
+                    android:textColor="#000"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Payment Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceedToPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Proceed to Payment"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp"
+            android:enabled="false"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/quantum_yellow"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

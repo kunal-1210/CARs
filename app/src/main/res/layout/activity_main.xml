@@ -77,7 +77,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"
         app:itemIconPadding="10dp"
-        app:menu="@menu/drawer_items">
+        app:menu="@menu/drawer_item">
 
     </com.google.android.material.navigation.NavigationView>
 

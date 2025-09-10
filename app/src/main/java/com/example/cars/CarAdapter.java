@@ -36,8 +36,10 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
         car car=carList.get(position);
-        holder.brandModel.setText(car.brand+""+car.model);
+        holder.brandModel.setText(car.brand+" "+car.model);
         holder.price.setText("₹ "+ car.price_per_day+"/day");
+        holder.vehicle_no.setText(car.getVehicle_no());
+        holder.availability0.setText(car.isAvailability() ? "Available" : "Not Available");
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, Info_car.class);
             intent.putExtra("carId", car.carId); // assuming your car class has `carId`
@@ -69,13 +71,15 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
     public static class CarViewHolder extends RecyclerView.ViewHolder{
         ImageView carImage;
-        TextView brandModel, price;
+        TextView brandModel, price , availability0 , vehicle_no;
 
         public CarViewHolder(@NonNull View itemView){
             super(itemView);
             carImage = itemView.findViewById(R.id.car_img);
             brandModel=itemView.findViewById(R.id.car_brand_model);
             price=itemView.findViewById(R.id.car_price);
+            availability0=itemView.findViewById(R.id.car_availability0);
+            vehicle_no=itemView.findViewById(R.id.car_num0);
 
         }
 

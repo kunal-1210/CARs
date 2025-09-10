@@ -127,6 +127,8 @@ public class activity_upload extends AppCompatActivity implements OnMapReadyCall
                 carData.put("latitude", latitude);
                 carData.put("longitude", longitude);
                 carData.put("media_urls", uploadedUrls);
+                carData.put("availability", true);
+
 
                 String carId = FirebaseDatabase.getInstance().getReference("Cars").push().getKey();
                 DatabaseReference carRef = FirebaseDatabase.getInstance().getReference("Cars").child(carId);

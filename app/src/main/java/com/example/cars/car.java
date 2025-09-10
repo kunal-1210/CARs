@@ -3,9 +3,11 @@ package com.example.cars;
 import java.util.List;
 
 public class car {
+
     public String mileage, vehicle_no, carId, brand, model, price_per_day, owner_uid, fuel, seats, transmission;
     public List<String> media_urls;
     public double latitude, longitude;
+    public boolean availability; // ✅ Added availability field
 
     public car() {
         // required empty constructor for Firebase
@@ -13,7 +15,7 @@ public class car {
 
     public car(String vehicle_no, String mileage, String brand, String model, List<String> media_urls,
                String uid, int price, String fuel, String seats, String transmission,
-               double latitude, double longitude) {
+               double latitude, double longitude, boolean availability) {
 
         this.vehicle_no = vehicle_no;
         this.mileage = mileage;
@@ -27,6 +29,7 @@ public class car {
         this.transmission = transmission;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.availability = availability; // ✅ Initialize availability
     }
 
     // Getters
@@ -43,6 +46,7 @@ public class car {
     public double getLatitude() { return latitude; }
     public double getLongitude() { return longitude; }
     public List<String> getMedia_urls() { return media_urls; }
+    public boolean isAvailability() { return availability; } // ✅ Getter for availability
 
     // Setters
     public void setVehicle_no(String vehicle_no) { this.vehicle_no = vehicle_no; }
@@ -58,4 +62,5 @@ public class car {
     public void setLatitude(double latitude) { this.latitude = latitude; }
     public void setLongitude(double longitude) { this.longitude = longitude; }
     public void setMedia_urls(List<String> media_urls) { this.media_urls = media_urls; }
+    public void setAvailability(boolean availability) { this.availability = availability; } // ✅ Setter for availability
 }

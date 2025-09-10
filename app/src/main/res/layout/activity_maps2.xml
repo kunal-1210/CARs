@@ -9,13 +9,13 @@
 
     <!-- Compact header container -->
     <LinearLayout
+        android:id="@+id/header_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@android:color/white"
         android:padding="8dp"
-        android:elevation="4dp"
-        android:id="@+id/header_container">
+        android:elevation="4dp">
 
         <SearchView
             android:id="@+id/search_location1"
@@ -27,7 +27,7 @@
             android:background="@null" />
 
         <Button
-            android:id="@+id/btn_finalize_location"
+            android:id="@+id/btnflocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Select"
@@ -40,12 +40,33 @@
             android:paddingBottom="6dp" />
     </LinearLayout>
 
+    <!-- Instruction text right below header -->
+    <TextView
+        android:id="@+id/tv_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_container"
+        android:background="#33FFFF00"
+        android:text=" Long tap on the map to select pickup location.\nOnly choose inside the highlighted circle."
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:alpha="0.9" />
+
     <!-- Map fragment fills the rest -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header_container" />
+        android:layout_below="@id/tv_instruction" />
+    <ImageView
+        android:id="@+id/center_marker"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_location_pin"
+    android:layout_centerInParent="true"
+    android:contentDescription="Center Marker" />
 
 </RelativeLayout>

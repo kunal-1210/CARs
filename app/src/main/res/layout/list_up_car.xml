@@ -28,6 +28,28 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:paddingTop="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/car_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle No.: "
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:paddingTop="4dp"/>
+            <TextView
+                android:id="@+id/car_num0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="16dp"
+                android:textColor="#3949AB"
+                android:paddingTop="4dp"/>
+        </LinearLayout>
+
         <TextView
             android:id="@+id/car_price"
             android:layout_width="wrap_content"
@@ -36,7 +58,31 @@
             android:textSize="14sp"
             android:textColor="#4CAF50"
             android:paddingTop="4dp"/>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+        <TextView
+            android:id="@+id/car_availability"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="Availability: "
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:paddingTop="4dp"/>
+    <TextView
+        android:id="@+id/car_availability0"
+        android:layout_width="0dp"
+        android:gravity="left"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:text="true/false"
+        android:textColor="#FF0000"
+        android:textSize="16dp" />
+</LinearLayout>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -11,10 +11,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.HorizontalScrollView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -37,6 +39,8 @@ public class Info_car extends AppCompatActivity {
     private EditText mileagetext, vehiclenoedittext, brandEditText, modelEditText, rateEditText, seatsEditText;
     private RadioGroup fuelGroup, transmissionGroup;
     private RadioButton petrol, diesel, cng, electric, manual, automatic;
+    private TextView availabilitytxt;
+    private SwitchCompat availabilitySwitch;
 
     private LinearLayout imagePreviewLayout;
     private HorizontalScrollView scrollView;
@@ -75,6 +79,7 @@ public class Info_car extends AppCompatActivity {
         modelEditText = findViewById(R.id.car_model);
         rateEditText = findViewById(R.id.per_day_rate);
         seatsEditText = findViewById(R.id.seats);
+        availabilitySwitch = findViewById(R.id.switch_availability);
 
         fuelGroup = findViewById(R.id.radio_group_fuel_type);
         petrol = findViewById(R.id.radio_petrol);
@@ -111,6 +116,16 @@ public class Info_car extends AppCompatActivity {
         pickLocationBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, MapsActivity.class);
             startActivityForResult(intent, 1001); // 1001 is the request code
+        });
+        availabilitySwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            carRef.child("availability").setValue(isChecked)
+                .addOnSuccessListener(aVoid -> {
+                    String status = isChecked ? "Car is now Available" : "Car is now Unavailable";
+                    Toast.makeText(Info_car.this, status, Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(Info_car.this, "Failed to update availability: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
         });
 
         updatebtn.setOnClickListener(v ->updatedetails());
@@ -206,6 +221,10 @@ public class Info_car extends AppCompatActivity {
             carRef.child("fuel").setValue(fuel);
             carRef.child("transmission").setValue(transmission);
 
+        // ✅ Update the Availability from the Switch
+        boolean isAvailable = availabilitySwitch.isChecked();
+        carRef.child("availability").setValue(isAvailable);
+
         if (newLat != 0.0 && newLng != 0.0) {
             carRef.child("latitude").setValue(newLat);
             carRef.child("longitude").setValue(newLng);
@@ -285,6 +304,8 @@ public class Info_car extends AppCompatActivity {
                         seatsEditText.setText(c.getSeats());
                         vehiclenoedittext.setText(c.getVehicle_no());
                         mileagetext.setText(c.getMileage());
+                        availabilitySwitch.setChecked(c.isAvailability());
+
 
                         // Fuel type
                         if (c.getFuel() != null) {

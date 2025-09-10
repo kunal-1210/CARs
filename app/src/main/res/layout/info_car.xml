@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".Info_car">
 
     <LinearLayout
@@ -17,8 +18,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Enter the car brand"
+                android:background="@android:color/transparent"
                 android:inputType="text"/>
         </LinearLayout>
 
@@ -39,8 +44,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Enter the car model"
+                android:background="@android:color/transparent"
                 android:inputType="text"/>
         </LinearLayout>
 
@@ -61,8 +70,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Enter per day rate"
+                android:background="@android:color/transparent"
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
@@ -84,8 +97,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Enter number of seats"
+                android:background="@android:color/transparent"
                 android:inputType="number"/>
         </LinearLayout>
 
@@ -117,6 +134,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <RadioButton
                 android:id="@+id/radio_petrol"
                 android:layout_width="wrap_content"
@@ -143,8 +161,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,6 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Enter vehicle number plate"
+                android:background="@android:color/transparent"
                 android:inputType="text"/>
         </LinearLayout>
 
@@ -165,7 +187,10 @@
             android:id="@+id/verify_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Verify Car"/>
+            android:text="Verify Car"
+            android:backgroundTint="#2196F3"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="12dp"/>
 
         <!-- Transmission Type -->
         <TextView
@@ -182,6 +207,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <RadioButton
                 android:id="@+id/manual_radio"
                 android:layout_width="wrap_content"
@@ -198,8 +224,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_marginBottom="12dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -213,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Enter mileage"
+                android:background="@android:color/transparent"
                 android:inputType="number"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -228,6 +258,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Upload Image"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="12dp"/>
 
         <HorizontalScrollView
@@ -252,28 +284,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pick Location on Map"
+            android:backgroundTint="#FF9800"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="12dp"/>
+
         <fragment
             android:id="@+id/map_preview"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"/>
-        <!-- Add Car -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <!-- Availability -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Availability for othersto rent: "
+            android:textSize="19dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_availability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Unavailable"
+                android:textOn="Available"/>
+    </LinearLayout>
+    <!-- Availability -->
+
+
+        <!-- Buttons -->
         <Button
             android:id="@+id/update_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update Details"/>
+            android:text="Update Details"
+            android:backgroundTint="#3F51B5"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+
         <Button
             android:id="@+id/delete_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete"/>
-
+            android:text="Delete"
+            android:backgroundTint="#F44336"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 </ScrollView>

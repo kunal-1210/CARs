@@ -21,26 +21,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CARs"
         tools:targetApi="31">
+        <activity
+            android:name=".VerifyPD2"
+            android:exported="false" />
 
-        <!--
-             TODO: Before you run your application, you need a Google Maps API key.
+        <activity
+            android:name=".VerifyPD"
+            android:exported="false" />
+        <activity
+            android:name=".Mybookings"
+            android:exported="false" />
+        <activity
+            android:name=".Success"
+            android:exported="false" />
 
-             To get one, follow the directions here:
-
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-             Once you have your API key (it starts with "AIza"), define a new property in your
-             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA5cZYegcTFT8NLfjKn1VPiyDFdLlhuyYk" />
 
+        <activity
+            android:name=".MapsActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_maps2" />
+        <activity
+            android:name=".Booking_activity"
+            android:exported="false" />
         <activity android:name=".Info_car" />
-
-        <activity android:name=".MapsActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
         <activity
             android:name=".activity_upload"
             android:exported="false" />
@@ -68,6 +77,15 @@
 
             <!-- Optional: Add any intent-filters if needed -->
         </activity>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

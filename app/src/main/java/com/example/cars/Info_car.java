@@ -179,62 +179,79 @@ public class Info_car extends AppCompatActivity {
 
 
     private void updatedetails(){
+        String brand = brandEditText.getText().toString().trim();
+        String model = modelEditText.getText().toString().trim();
+        String price = rateEditText.getText().toString().trim();
+        String seats = seatsEditText.getText().toString().trim();
+        String vehicleNo = vehiclenoedittext.getText().toString().trim();
+        String mileage = mileagetext.getText().toString().trim();
 
+        int selectedFuelId = fuelGroup.getCheckedRadioButtonId();
+        RadioButton selectedFuelButton = findViewById(selectedFuelId);
+        String fuel = selectedFuelButton != null ? selectedFuelButton.getText().toString().toLowerCase() : "";
 
-            String brand = brandEditText.getText().toString().trim();
-            String model = modelEditText.getText().toString().trim();
-            String price = rateEditText.getText().toString().trim();
-            String seats = seatsEditText.getText().toString().trim();
-            String vehicleNo = vehiclenoedittext.getText().toString().trim();
-            String mileage = mileagetext.getText().toString().trim();
+        int selectedTransId = transmissionGroup.getCheckedRadioButtonId();
+        RadioButton selectedTransButton = findViewById(selectedTransId);
+        String transmission = selectedTransButton != null ? selectedTransButton.getText().toString().toLowerCase() : "";
 
-            // Get selected fuel type
-            int selectedFuelId = fuelGroup.getCheckedRadioButtonId();
-            RadioButton selectedFuelButton = findViewById(selectedFuelId);
-            String fuel = selectedFuelButton != null ? selectedFuelButton.getText().toString().toLowerCase() : "";
-
-            // Get selected transmission type
-            int selectedTransId = transmissionGroup.getCheckedRadioButtonId();
-            RadioButton selectedTransButton = findViewById(selectedTransId);
-            String transmission = selectedTransButton != null ? selectedTransButton.getText().toString().toLowerCase() : "";
-
-            // Validate fields
-            if (brand.isEmpty() || model.isEmpty() || price.isEmpty() || seats.isEmpty() || vehicleNo.isEmpty() || mileage.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-        uploadAllMediaToCloudinary(imageUriList, uploadedUrls -> {
-                if (uploadedUrls == null) return;  // upload failed
-                carRef.child("media_urls").setValue(uploadedUrls);
-            });
-
-
-            // Update in Firebase
-
-            carRef.child("brand").setValue(brand);
-            carRef.child("model").setValue(model);
-            carRef.child("price_per_day").setValue(price);
-            carRef.child("seats").setValue(seats);
-            carRef.child("vehicle_no").setValue(vehicleNo);
-            carRef.child("mileage").setValue(mileage);
-            carRef.child("fuel").setValue(fuel);
-            carRef.child("transmission").setValue(transmission);
-
-        // ✅ Update the Availability from the Switch
-        boolean isAvailable = availabilitySwitch.isChecked();
-        carRef.child("availability").setValue(isAvailable);
-
-        if (newLat != 0.0 && newLng != 0.0) {
-            carRef.child("latitude").setValue(newLat);
-            carRef.child("longitude").setValue(newLng);
+        if (brand.isEmpty() || model.isEmpty() || price.isEmpty() || seats.isEmpty() || vehicleNo.isEmpty() || mileage.isEmpty()) {
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            return;
         }
 
-            Toast.makeText(this, "Car details updated", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(),ListCarActivity.class);
-        startActivity(intent);
-        finish();
+        // First get existing media URLs from Firebase
+        carRef.child("media_urls").get().addOnSuccessListener(dataSnapshot -> {
+            List<String> mediaUrls = new ArrayList<>();
+            if (dataSnapshot.exists()) {
+                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+                    String url = snap.getValue(String.class);
+                    if (url != null) mediaUrls.add(url);
+                }
+            }
+
+            // Only upload if user selected new images
+            if (!imageUriList.isEmpty()) {
+                uploadAllMediaToCloudinary(imageUriList, uploadedUrls -> {
+                    if (uploadedUrls != null && !uploadedUrls.isEmpty()) {
+                        mediaUrls.clear();  // replace old media URLs
+                        mediaUrls.addAll(uploadedUrls);
+                    }
+                    saveCarData(brand, model, price, seats, vehicleNo, mileage, fuel, transmission, mediaUrls);
+                });
+            } else {
+                saveCarData(brand, model, price, seats, vehicleNo, mileage, fuel, transmission, mediaUrls);
+            }
+        });
     }
+
+    private void saveCarData(String brand, String model, String price, String seats, String vehicleNo,
+                             String mileage, String fuel, String transmission, List<String> mediaUrls) {
+
+        Map<String, Object> carData = new HashMap<>();
+        carData.put("brand", brand);
+        carData.put("model", model);
+        carData.put("price_per_day", price);
+        carData.put("seats", seats);
+        carData.put("vehicle_no", vehicleNo);
+        carData.put("mileage", mileage);
+        carData.put("fuel", fuel);
+        carData.put("transmission", transmission);
+        carData.put("media_urls", mediaUrls);
+        carData.put("availability", availabilitySwitch.isChecked());
+        if (newLat != 0.0 && newLng != 0.0) {
+            carData.put("latitude", newLat);
+            carData.put("longitude", newLng);
+        }
+
+        carRef.updateChildren(carData).addOnSuccessListener(aVoid -> {
+            Toast.makeText(this, "Car details updated", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), ListCarActivity.class));
+            finish();
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, "Update failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        });
+    }
+
 
 
 

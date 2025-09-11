@@ -362,7 +362,7 @@ String userPhone,carname,username,ownername,ownerId,date ,time, address;
             Log.d("Booking_activity", "Writing bookingData: " + bookingData);
             Log.d("Booking_activity", "Using key: " + razorpayPaymentID);
 
-            DatabaseReference carRef = FirebaseDatabase.getInstance().getReference("cars").child(carId);
+            DatabaseReference carRef = FirebaseDatabase.getInstance().getReference("Cars").child(carId);
             carRef.child("availability").setValue(false)
                 .addOnSuccessListener(aVoid -> Log.d("Booking_activity", "Car marked as unavailable"))
                 .addOnFailureListener(e -> Log.e("Booking_activity", "Failed to update availability", e));

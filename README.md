@@ -38,4 +38,4 @@ Screenshots:
 ## Contact
 **Kunal Chandrakant Jangale**  
 📧 kunal.jangale1210@gmail.com  
-🔗 [LinkedIn](linkedin.com/in/kunal-jangale-12594a35a)
+🔗 [LinkedIn](https://linkedin.com/in/kunal-jangale-12594a35a)

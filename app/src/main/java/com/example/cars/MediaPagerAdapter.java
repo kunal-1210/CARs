@@ -57,6 +57,7 @@ public class MediaPagerAdapter extends RecyclerView.Adapter<MediaPagerAdapter.Me
 
             Glide.with(context)
                 .load(url)
+                .fitCenter()
                 .into(holder.imageView);
         }
     }

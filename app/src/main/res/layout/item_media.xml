@@ -2,15 +2,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- For Images -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="380dp"
-        android:layout_height="380dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         android:visibility="gone" />
 
+    <!-- For Videos -->
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:visibility="gone" />
+
 </FrameLayout>

@@ -77,10 +77,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         if (cloudinary == null) {
-            Map config = new HashMap();
-            config.put("cloud_name", "dsepll5ts");
-            config.put("api_key", "761936899267157");
-            config.put("api_secret", "D3B50sysp1IHSpmPrnZHVzcSLig");
+            Properties properties = new Properties();
+            try {
+                // Load from local.properties
+                properties.load(getAssets().open("local.properties"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Map<String, String> config = new HashMap<>();
+            config.put("cloud_name", properties.getProperty("CLOUDINARY_CLOUD_NAME"));
+            config.put("api_key", properties.getProperty("CLOUDINARY_API_KEY"));
+            config.put("api_secret", properties.getProperty("CLOUDINARY_API_SECRET"));
             cloudinary = new Cloudinary(config);
         }
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED
